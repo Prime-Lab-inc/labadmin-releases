@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy Policy — Prime Lab Admin</title>
+<meta name="description" content="Privacy Policy for Prime Lab Admin, dental laboratory management software by Prime Dental Lab Inc.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <a class="brand" href="index.html"><span class="mark"><span></span></span><span><small>Prime</small><strong>LAB ADMIN</strong></span></a>
+  <nav><a href="index.html">Program</a><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms of Service</a><a href="mailto:prime@primelabinc.com">Contact</a></nav>
+</header>
+<main>
+  <h1>Privacy Policy</h1>
+  <p class="meta">Prime Lab Admin · Prime Dental Lab Inc. · Effective date: October 4, 2026</p>
+  <p class="lead">Prime Lab Admin is software that a dental laboratory installs on its own computer. The laboratory's data stays on that computer. This policy explains what the software does with data, which internet connections it makes, and what Prime Dental Lab Inc. ("we", "us") receives.</p>
+
+  <h2>1. Who we are</h2>
+  <p>Prime Dental Lab Inc., an Illinois corporation, publishes Prime Lab Admin (the "Software"). Contact: <a href="mailto:prime@primelabinc.com">prime@primelabinc.com</a>, website <a href="https://primelabinc.com">primelabinc.com</a>.</p>
+
+  <h2>2. The short version</h2>
+  <ul>
+    <li>The Software stores the laboratory's data (cases, patients, doctors, clinics, invoices, payments, documents, messages, files) in a database and document folders on the laboratory's computer.</li>
+    <li>We do not host, receive or access that data. The laboratory controls it.</li>
+    <li>The Software connects to the internet only for functions the laboratory sets up itself (release check, Google sign-in, the laboratory's own mailbox, Stripe, Telegram, Cloudflare, AI assistant). Each connection is described below.</li>
+    <li>The Software collects Usage Data about how it is used (Section 7); this never includes the content of patient records.</li>
+    <li>We do not sell personal data and do not use it for third-party advertising.</li>
+  </ul>
+
+  <h2>3. Roles</h2>
+  <p>The laboratory that installs the Software decides which data it enters and is responsible for that data under the laws that apply to it (for example HIPAA in the United States). We supply the Software; because the data remains on the laboratory's systems, we do not process it on the laboratory's behalf in the ordinary course of operation.</p>
+
+  <h2>4. Data the Software stores on the laboratory's computer</h2>
+  <p>Depending on how the laboratory uses it, the Software stores:</p>
+  <ul>
+    <li><strong>Laboratory and staff accounts</strong>: laboratory name, address, phone, e-mail; user names, roles, e-mail addresses and passwords (passwords are stored only as salted hashes).</li>
+    <li><strong>Clinics and doctors</strong>: names, contact details, price lists, portal accounts.</li>
+    <li><strong>Patients and cases</strong>: patient identifiers as entered by the laboratory, teeth, work, shade, instructions, production stages, case history, delivery records.</li>
+    <li><strong>Financial records</strong>: invoices, payments, statements, receipts, payment terms and reminders.</li>
+    <li><strong>Documents and files</strong>: lab slips, invoices and other PDFs, scans and files received in the Digital Inbox, Studio materials.</li>
+    <li><strong>Messages</strong>: case conversations with clinics and outsourcing partners, e-mails sent from the laboratory's mailbox.</li>
+    <li><strong>Technical records</strong>: an audit log of actions in the program, session records, diagnostics. Secrets (mail password, API keys, bot tokens, OAuth client secret) are kept in protected files on the computer, not in the database.</li>
+  </ul>
+  <p>All of this is stored on the laboratory's computer in the Windows user profile of the laboratory's account. It is not transmitted to us.</p>
+
+  <h2>5. Internet connections the Software makes</h2>
+  <p>The Software makes no connection for the laboratory's data on its own. The connections below exist only for the stated purpose, and most of them only after the laboratory sets them up.</p>
+  <table>
+    <tr><th>Function</th><th>Where the connection goes</th><th>What is sent</th><th>When</th></tr>
+    <tr><td>Release check and update</td><td>The public release feed of Prime Lab Admin on GitHub</td><td>A standard web request for the release list; the installer is downloaded and verified by checksum. No laboratory data.</td><td>At start and about once a day when the program is open.</td></tr>
+    <tr><td>Sign in with Google</td><td>Google accounts (accounts.google.com, oauth2.googleapis.com)</td><td>The OAuth request with scopes <code>openid</code> and <code>email</code>. The Software receives an ID token and uses the verified e-mail address to match an existing account in the program. No other Google data is requested or stored; the Software has no access to Gmail, Drive or contacts.</td><td>Only when the user chooses "Continue with Google".</td></tr>
+    <tr><td>Laboratory e-mail</td><td>The laboratory's own mail server (SMTP/IMAP)</td><td>Messages the laboratory sends from the program (invoices, statements, reminders, case messages) and messages read into the Digital Inbox. To propose mail server settings the Software asks the public Thunderbird autoconfig service and the domain's DNS records with the mailbox's domain name only.</td><td>Only after the laboratory connects its mailbox.</td></tr>
+    <tr><td>Payment links</td><td>Stripe, through the laboratory's own Stripe account</td><td>Invoice amount and reference needed to create a payment link.</td><td>Only if the laboratory connects its Stripe account and creates a link.</td></tr>
+    <tr><td>Telegram inbox</td><td>Telegram Bot API, through the laboratory's own bot</td><td>Files and messages sent to the laboratory's bot are read into the Digital Inbox.</td><td>Only if the laboratory creates and connects a bot.</td></tr>
+    <tr><td>Remote access</td><td>The laboratory's own Cloudflare account (Tunnel and Access)</td><td>Portal and mobile traffic between the laboratory computer and authorised users, protected by Cloudflare Access sign-in; the Software verifies the Cloudflare Access signature on every remote request.</td><td>Only if the laboratory sets up remote access.</td></tr>
+    <tr><td>AI assistant connection</td><td>An AI assistant application on the same computer, through a local adapter; that application talks to the AI provider the laboratory selected</td><td>Data and instructions the assistant requests within the limits accepted by the laboratory. The consent text shown in the program states what the assistant may access. The Software itself stores no provider API key for this connection.</td><td>Only after the laboratory gives consent in the program; it can be disconnected at any time.</td></tr>
+    <tr><td>Studio media generation</td><td>Google Gemini API, with the laboratory's own API key</td><td>The text prompt for a picture or short video.</td><td>Only if the laboratory enters its own key and confirms each job.</td></tr>
+    <tr><td>Prime Lab server (licence, Prime ID, usage data)</td><td>Servers operated by or for Prime Dental Lab Inc.</td><td>Laboratory name, country, owner e-mail, an installation identifier, licence state; for Prime ID, doctor invitations and account e-mails; and the Usage Data described in Section 7. Never the content of cases, patients, invoices, documents or messages.</td><td>Licence check at start and about once a day; Usage Data as described in Section 7.</td></tr>
+  </table>
+
+  <h2>6. Google user data</h2>
+  <p>The Software uses Google Sign-In only to authenticate a user who already has an account in the laboratory's program. It requests the <code>openid</code> and <code>email</code> scopes and uses the e-mail address in the signed ID token to find that account. The Software does not request access to any other Google data, does not store Google tokens beyond the sign-in itself, and does not share Google user data with anyone. Use of information received from Google APIs adheres to the <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>, including the Limited Use requirements. A user can withdraw this access at any time in their Google Account under "Third-party apps &amp; services".</p>
+
+  <h2>7. What Prime Dental Lab Inc. receives</h2>
+  <ul>
+    <li><strong>E-mail you send us</strong> at prime@primelabinc.com: we keep the correspondence to answer and support you.</li>
+    <li><strong>Release downloads</strong>: the release feed and installers are served by GitHub; GitHub's own privacy policy applies to those requests.</li>
+    <li><strong>Usage Data</strong>: as agreed in the <a href="terms.html">Terms of Service</a> (Section 6), the Software collects data about its installation and use, across all of its screens, modules, functions and services, and may transmit it to servers operated by or for Prime. This includes, for example, the laboratory's registration details (laboratory name, country, owner e-mail), an installation identifier, the release and language in use, counts of records and actions (such as cases, invoices and users), which functions and modules are used and how often, setup progress, and diagnostic and error information. We use Usage Data for product improvement, support, licensing, security, statistics and the development of new products and services. Prime decides which Usage Data it collects and may change this at any time. Usage Data does not include the content of patient records.</li>
+  </ul>
+
+  <h2>8. Security</h2>
+  <ul>
+    <li>Passwords are stored as salted hashes; mail passwords, API keys, bot tokens and OAuth secrets are kept in protected files using Windows data protection.</li>
+    <li>External connections use HTTPS. Remote requests are accepted only with a valid Cloudflare Access signature.</li>
+    <li>Installers are published with a checksum that the program verifies before installing an update.</li>
+    <li>The laboratory controls user accounts, roles and the portal access of clinics and doctors.</li>
+  </ul>
+
+  <h2>9. Retention and deletion</h2>
+  <ul>
+    <li>Data stays on the laboratory's computer for as long as the laboratory keeps it. The laboratory manages records inside the program and makes its own backups.</li>
+    <li>When the Software is uninstalled, the uninstaller asks whether to keep the laboratory's documents (PDF invoices, lab slips) and whether to delete all laboratory data (database and settings). Nothing is deleted unless the laboratory chooses so.</li>
+    <li>Sample data added for testing can be removed in the program's settings.</li>
+    <li>Google sign-in access can be revoked in the user's Google Account at any time.</li>
+    <li>To ask us to delete correspondence you sent to prime@primelabinc.com, write to the same address.</li>
+  </ul>
+
+  <h2>10. Children</h2>
+  <p>The Software is a business tool for dental laboratories and is not directed to children. Patient records are entered by the laboratory under its own obligations.</p>
+
+  <h2>11. Changes to this policy</h2>
+  <p>We may change this policy at any time. The current version is the one published on this page with its effective date; changes may also be announced with a release of the Software. Continued use of the Software after a change means acceptance of the updated policy.</p>
+
+  <h2>12. Contact</h2>
+  <p>Prime Dental Lab Inc. · <a href="mailto:prime@primelabinc.com">prime@primelabinc.com</a> · <a href="https://primelabinc.com">primelabinc.com</a></p>
+</main>
+<footer>
+  © 2026 Prime Dental Lab Inc. · <a href="index.html">Program</a> · <a href="terms.html">Terms of Service</a> · <a href="mailto:prime@primelabinc.com">prime@primelabinc.com</a>
+</footer>
+</body>
+</html>
