@@ -14,7 +14,7 @@
 </header>
 <main>
   <h1>Privacy Policy</h1>
-  <p class="meta">Prime Lab Admin · Prime Dental Lab Inc. · Effective date: October 4, 2026</p>
+  <p class="meta">Prime Lab Admin · Prime Dental Lab Inc. · Effective date: October 6, 2026</p>
   <p class="lead">Prime Lab Admin is software that a dental laboratory installs on its own computer. The laboratory's data stays on that computer. This policy explains what the software does with data, which internet connections it makes, and what Prime Dental Lab Inc. ("we", "us") receives.</p>
 
   <h2>1. Who we are</h2>
@@ -23,14 +23,15 @@
   <h2>2. The short version</h2>
   <ul>
     <li>The Software stores the laboratory's data (cases, patients, doctors, clinics, invoices, payments, documents, messages, files) in a database and document folders on the laboratory's computer.</li>
-    <li>We do not host, receive or access that data. The laboratory controls it.</li>
+    <li>The laboratory controls that data. Patient names and other patient identifiers, files and free-text notes stay on the laboratory's computer; we never receive them.</li>
+    <li>The Software works only with an active connection to the Prime Lab server, which checks the licence every working day (Section 5).</li>
     <li>The Software connects to the internet only for functions the laboratory sets up itself (release check, Google sign-in, the laboratory's own mailbox, Stripe, Telegram, Cloudflare, AI assistant). Each connection is described below.</li>
-    <li>The Software collects Usage Data about how it is used (Section 7); this never includes the content of patient records.</li>
+    <li>The Software collects Usage Data about how it is used (Section 7) and Business Data — work statistics and the business content of invoices (Section 7); this never includes patient names, patient identifiers or files.</li>
     <li>We do not sell personal data and do not use it for third-party advertising.</li>
   </ul>
 
   <h2>3. Roles</h2>
-  <p>The laboratory that installs the Software decides which data it enters and is responsible for that data under the laws that apply to it (for example HIPAA in the United States). We supply the Software; because the data remains on the laboratory's systems, we do not process it on the laboratory's behalf in the ordinary course of operation.</p>
+  <p>The laboratory that installs the Software decides which data it enters and is responsible for that data under the laws that apply to it (for example HIPAA in the United States). We supply the Software; patient identities, files and free-text records remain on the laboratory's systems. We receive Usage Data and Business Data (Section 7), which contain no patient names or other patient identifiers, and we use them for our own purposes as an independent controller, not on the laboratory's behalf. The laboratory is responsible for informing its clinics and doctors, where the law requires, that the business content of its invoices is shared with us.</p>
 
   <h2>4. Data the Software stores on the laboratory's computer</h2>
   <p>Depending on how the laboratory uses it, the Software stores:</p>
@@ -43,7 +44,7 @@
     <li><strong>Messages</strong>: case conversations with clinics and outsourcing partners, e-mails sent from the laboratory's mailbox.</li>
     <li><strong>Technical records</strong>: an audit log of actions in the program, session records, diagnostics. Secrets (mail password, API keys, bot tokens, OAuth client secret) are kept in protected files on the computer, not in the database.</li>
   </ul>
-  <p>All of this is stored on the laboratory's computer in the Windows user profile of the laboratory's account. It is not transmitted to us.</p>
+  <p>All of this is stored on the laboratory's computer in the Windows user profile of the laboratory's account. Only the Usage Data and Business Data described in Section 7 are transmitted to us; patient names and identifiers, files and free-text notes never are.</p>
 
   <h2>5. Internet connections the Software makes</h2>
   <p>The Software makes no connection for the laboratory's data on its own. The connections below exist only for the stated purpose, and most of them only after the laboratory sets them up.</p>
@@ -57,7 +58,7 @@
     <tr><td>Remote access</td><td>The laboratory's own Cloudflare account (Tunnel and Access)</td><td>Portal and mobile traffic between the laboratory computer and authorised users, protected by Cloudflare Access sign-in; the Software verifies the Cloudflare Access signature on every remote request.</td><td>Only if the laboratory sets up remote access.</td></tr>
     <tr><td>AI assistant connection</td><td>An AI assistant application on the same computer, through a local adapter; that application talks to the AI provider the laboratory selected</td><td>Data and instructions the assistant requests within the limits accepted by the laboratory. The consent text shown in the program states what the assistant may access. The Software itself stores no provider API key for this connection.</td><td>Only after the laboratory gives consent in the program; it can be disconnected at any time.</td></tr>
     <tr><td>Studio media generation</td><td>Google Gemini API, with the laboratory's own API key</td><td>The text prompt for a picture or short video.</td><td>Only if the laboratory enters its own key and confirms each job.</td></tr>
-    <tr><td>Prime Lab server (licence, Prime ID, usage data)</td><td>Servers operated by or for Prime Dental Lab Inc.</td><td>Laboratory name, country, owner e-mail, an installation identifier, licence state; for Prime ID, doctor invitations and account e-mails; and the Usage Data described in Section 7. Never the content of cases, patients, invoices, documents or messages.</td><td>Licence check at start and about once a day; Usage Data as described in Section 7.</td></tr>
+    <tr><td>Prime Lab server (licence, Prime ID, usage data)</td><td>Servers operated by or for Prime Dental Lab Inc.</td><td>Laboratory name, country, owner e-mail, an installation identifier, licence state; for Prime ID, doctor invitations and account e-mails; and the Usage Data and Business Data described in Section 7. Never patient names or other patient identifiers, files, documents, messages or free-text notes.</td><td>Licence check at start and every working day — the Software does not work without it (after one day without a successful check it stops until the connection returns); Usage Data and Business Data as described in Section 7.</td></tr>
   </table>
 
   <h2>6. Google user data</h2>
@@ -67,7 +68,8 @@
   <ul>
     <li><strong>E-mail you send us</strong> at prime@primelabinc.com: we keep the correspondence to answer and support you.</li>
     <li><strong>Release downloads</strong>: the release feed and installers are served by GitHub; GitHub's own privacy policy applies to those requests.</li>
-    <li><strong>Usage Data</strong>: as agreed in the <a href="terms.html">Terms of Service</a> (Section 6), the Software collects data about its installation and use, across all of its screens, modules, functions and services, and may transmit it to servers operated by or for Prime. This includes, for example, the laboratory's registration details (laboratory name, country, owner e-mail), an installation identifier, the release and language in use, counts of records and actions (such as cases, invoices and users), which functions and modules are used and how often, setup progress, and diagnostic and error information. We use Usage Data for product improvement, support, licensing, security, statistics and the development of new products and services. Prime decides which Usage Data it collects and may change this at any time. Usage Data does not include the content of patient records.</li>
+    <li><strong>Usage Data</strong>: as agreed in the <a href="terms.html">Terms of Service</a> (Section 6), the Software collects data about its installation and use, across all of its screens, modules, functions and services, and may transmit it to servers operated by or for Prime. This includes, for example, the laboratory's registration details (laboratory name, country, owner e-mail), an installation identifier, the release and language in use, counts of records and actions (such as cases, invoices and users), which functions and modules are used and how often, setup progress, and diagnostic and error information. We use Usage Data for product improvement, support, licensing, security, statistics and the development of new products and services. Prime decides which Usage Data it collects and may change this at any time. Usage Data does not include patient names, patient identifiers or files.</li>
+    <li><strong>Business Data</strong>: statistics of the laboratory's work (for example how many cases, invoices and payments were created and when) and the business content of invoices and price lists — the clinic and doctor named on the invoice, the type of work, material, quantity, price, discounts, totals and dates. Business Data never includes patient names or any other patient identifiers, patient dates of birth, case numbers, files (scans, designs, photos, documents), or free-text instructions, notes and messages. We use Business Data for statistics, market and price analysis, licensing, product development and new products and services. We do not sell Business Data that names a clinic or doctor.</li>
   </ul>
 
   <h2>8. Security</h2>
