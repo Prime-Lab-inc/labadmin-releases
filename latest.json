@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "release": 137,
+  "release": 138,
   "platform": "windows-x64",
-  "size": 40914333,
-  "sha256": "dc607629f71c6b0afab024094b8f6865380ac8af1a28e378adabd6e70e820b31",
-  "url": "https://github.com/Prime-Lab-inc/labadmin-releases/releases/download/v137/PrimeLabAdmin-137-Setup.exe"
+  "size": 40923422,
+  "sha256": "ab91e2da993d03870a1d06f5a635e0c1c327efa39dc2fd3f3c951f29885b01e5",
+  "url": "https://github.com/Prime-Lab-inc/labadmin-releases/releases/download/v138/PrimeLabAdmin-138-Setup.exe"
 }
